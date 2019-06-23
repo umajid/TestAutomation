@@ -3,6 +3,7 @@ package com.stc.testcases;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -399,6 +400,18 @@ public class Sprint1Cases extends TestBase
 		catch(Exception e){
 			Assert.assertTrue(false, "TC failing " + e.getMessage());
 		}	
+	}
+	
+	@AfterSuite
+	public void tearDown(){
+		// Initializing the Config Files
+		try {
+			initialize();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			Assert.assertTrue(false, e.getMessage());
+		}
+
 	}
 
 }

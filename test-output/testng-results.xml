@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" total="12" passed="11">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="310772" started-at="2019-06-23T13:15:22Z" finished-at="2019-06-23T13:20:32Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="310772" started-at="2019-06-23T13:15:22Z" finished-at="2019-06-23T13:20:32Z">
+      <class name="com.stc.testcases.Sprint1Cases">
+        <test-method status="PASS" signature="doSetup()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="doSetup" is-config="true" duration-ms="49" started-at="2019-06-23T18:45:22Z" finished-at="2019-06-23T18:45:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doSetup -->
+        <test-method status="PASS" signature="verifyTermsAndConditionDefaultState()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="verifyTermsAndConditionDefaultState" duration-ms="19675" started-at="2019-06-23T18:45:22Z" finished-at="2019-06-23T18:45:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTermsAndConditionDefaultState -->
+        <test-method status="PASS" signature="verifyOffersAndAlertsDefaultState()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="verifyOffersAndAlertsDefaultState" duration-ms="2766" started-at="2019-06-23T18:45:41Z" finished-at="2019-06-23T18:45:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyOffersAndAlertsDefaultState -->
+        <test-method status="PASS" signature="OffersAndAlertsDeselect()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="OffersAndAlertsDeselect" duration-ms="2407" started-at="2019-06-23T18:45:44Z" finished-at="2019-06-23T18:45:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OffersAndAlertsDeselect -->
+        <test-method status="PASS" signature="duplicateMobileNumberError()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="duplicateMobileNumberError" duration-ms="10341" started-at="2019-06-23T18:45:47Z" finished-at="2019-06-23T18:45:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- duplicateMobileNumberError -->
+        <test-method status="FAIL" signature="duplicateEmailError()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="duplicateEmailError" duration-ms="9746" started-at="2019-06-23T18:45:57Z" finished-at="2019-06-23T18:46:07Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Error Messge appears correctly when the user tries to register with Email that is already used  expected [User Already Exist. Please Login] but found [Invalid mobile number! Mobile number should start with 5 and have 9 digits]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Error Messge appears correctly when the user tries to register with Email that is already used  expected [User Already Exist. Please Login] but found [Invalid mobile number! Mobile number should start with 5 and have 9 digits]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertEquals(Assert.java:123)
+	at org.testng.Assert.assertEquals(Assert.java:176)
+	at com.stc.base.TestUtils.verifyDuplicateEmailErrorMessage(TestUtils.java:549)
+	at com.stc.testcases.Sprint1Cases.duplicateEmailError(Sprint1Cases.java:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- duplicateEmailError -->
+        <test-method status="PASS" signature="InvalidMobileNumErrorMsg()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="InvalidMobileNumErrorMsg" duration-ms="9894" started-at="2019-06-23T18:46:07Z" finished-at="2019-06-23T18:46:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InvalidMobileNumErrorMsg -->
+        <test-method status="PASS" signature="InvalidEmailErrorMsg()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="InvalidEmailErrorMsg" duration-ms="9747" started-at="2019-06-23T18:46:17Z" finished-at="2019-06-23T18:46:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InvalidEmailErrorMsg -->
+        <test-method status="PASS" signature="smallPasswordErrorMsg()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="smallPasswordErrorMsg" duration-ms="10504" started-at="2019-06-23T18:46:26Z" finished-at="2019-06-23T18:46:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- smallPasswordErrorMsg -->
+        <test-method status="PASS" signature="checkoutWithoutEmailMobileVerification()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="checkoutWithoutEmailMobileVerification" duration-ms="79820" started-at="2019-06-23T18:46:37Z" finished-at="2019-06-23T18:47:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkoutWithoutEmailMobileVerification -->
+        <test-method status="PASS" signature="notifyMeRegisteredUser()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="notifyMeRegisteredUser" duration-ms="50427" started-at="2019-06-23T18:47:57Z" finished-at="2019-06-23T18:48:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- notifyMeRegisteredUser -->
+        <test-method status="PASS" signature="notifyMeGuestUser()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="notifyMeGuestUser" duration-ms="32883" started-at="2019-06-23T18:48:47Z" finished-at="2019-06-23T18:49:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- notifyMeGuestUser -->
+        <test-method status="PASS" signature="notifyMeTwoCities()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="notifyMeTwoCities" duration-ms="72539" started-at="2019-06-23T18:49:20Z" finished-at="2019-06-23T18:50:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- notifyMeTwoCities -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-06-23T18:50:33Z" finished-at="2019-06-23T18:50:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.stc.testcases.Sprint1Cases -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

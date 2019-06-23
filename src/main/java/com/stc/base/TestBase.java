@@ -18,6 +18,7 @@ public class TestBase {
 	public static WebDriver driver =null;
 	public boolean isInitalized = false;
 	FileInputStream ip;
+	public static boolean isBrowserOpened=false;
 
 	// initializing the Tests
 	public void initialize() throws Exception{
@@ -43,27 +44,29 @@ public class TestBase {
 	}
 
 	// open a browser if its not opened
-	public void openBrowser(){
-		if(Env.getProperty("browserType").equals("MOZILLA")){
-			System.setProperty("webdriver.gecko.driver","path of geckodriver.exe");
-		driver = new FirefoxDriver();
-	}
-		else if (Env.getProperty("browserType").equals("IE")){
-			System.setProperty("webdriver.ie.driver","path of geckodriver.exe");
-			driver = new FirefoxDriver();
+		public void openBrowser(){
+			if(!isBrowserOpened){
+				if(Env.getProperty("browserType").equals("MOZILLA")){
+					System.setProperty("webdriver.gecko.driver","path of geckodriver.exe");
+					driver = new FirefoxDriver();
+				}
+				else if (Env.getProperty("browserType").equals("IE")){
+					System.setProperty("webdriver.ie.driver","path of geckodriver.exe");
+					driver = new FirefoxDriver();
+				}
+
+				else if (Env.getProperty("browserType").equals("CHROME")){
+					System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//src//test//resources//com//stc//drivers/chromedriver.exe");
+					driver = new ChromeDriver();
+				}
+
+				String waitTime=Env.getProperty("default_implicitWait");
+				driver.manage().timeouts().implicitlyWait(Long.parseLong(waitTime), TimeUnit.SECONDS);
+
+				isBrowserOpened = true;
+			}
 		}
 
-		else if (Env.getProperty("browserType").equals("CHROME")){
-			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//src//test//resources//com//stc//drivers/chromedriver.exe");
-			driver = new ChromeDriver();
-		}
-
-		String waitTime=Env.getProperty("default_implicitWait");
-		driver.manage().timeouts().implicitlyWait(Long.parseLong(waitTime), TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-
-
-	}
 	
 
 

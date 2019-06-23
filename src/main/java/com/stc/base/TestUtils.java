@@ -525,7 +525,7 @@ public class TestUtils extends TestBase{
 			String mobileNum = "5" + generateRandomNumber(8);
 
 			// Enter Random valid Mobile Number
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			driver.findElement(By.id(OR.getProperty("Mobile_Textbox"))).sendKeys(mobileNum);
 
 			// Enter Password 
