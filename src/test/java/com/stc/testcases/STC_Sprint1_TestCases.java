@@ -636,7 +636,247 @@ public class STC_Sprint1_TestCases extends TestBase {
 		}
 	}
 	
+
+	
+	@Test(priority = 11)
+	public void validateAddToCartProductGrayColor_StockAvailabilitySheet_TC03() {
+		try {
+
+			/**
+			 * This method will use to open Browser
+			 */
+			openBrowser();
+
+			/**
+			 * This method will use to open the application URL
+			 */
+			utillObj.openApplication();
+
+			// Login to application with unverified email and mobile number
+			utillObj.LoginToApplication(Data.getProperty("VerifiedEmail"), Data.getProperty("VerifiedEmailPwd"));
+
+			// select city
+			utillObj.wait(6);
+			driver.findElement(By.xpath(OR.getProperty("SelectCity"))).click();
+			
+			
+
+			// Select Sabya
+			utillObj.wait(2);
+			driver.findElement(By.xpath(OR.getProperty("Sabya"))).click();
+
+			// Click on search input box
+			//utillObj.wait(8);
+			//driver.findElement(By.xpath(Data.getProperty("SearchBox"))).click();
+			
+
+			// Out of stock product search
+			utillObj.wait(6);
+			driver.findElement(By.xpath(OR.getProperty("SearchBox"))).sendKeys(Data.getProperty("OutOfStockProduct"));
+			
+			// Out of stock product search
+			utillObj.wait(3);
+			driver.findElement(By.xpath(OR.getProperty("OutOfStockProductLink"))).click();
+			utillObj.wait(10);
+
+			
+			// Out of stock product search
+			driver.findElement(By.xpath(OR.getProperty("SearchBox"))).sendKeys(Data.getProperty("OutOfStockProduct"));
+			
+			//Add to cart
+			Boolean flag=driver.findElement(By.xpath(OR.getProperty("AddToCartButton"))).isEnabled();
+			if(flag==false) {
+				Assert.assertTrue(true, "As Expected, Add to cart is disabled");
+			}else {
+				Assert.assertTrue(false, " Add to cart is not disabled");
+			}
+			
+		} catch (NoSuchElementException nse) {
+			Assert.assertTrue(false, "NoSuchWebElement expection occured for the WebElment--" + nse.getMessage());
+		} catch (Exception e) {
+			Assert.assertTrue(false, "Exception Occured as --" + e.getMessage());
+		}
+	}
+
+	@Test(priority = 12)
+	public void validateWishListSelection_StockAvailabilitySheet_TC05() {
+		try {
+
+			/**
+			 * This method will use to open Browser
+			 */
+			openBrowser();
+
+			/**
+			 * This method will use to open the application URL
+			 */
+			utillObj.openApplication();
+
+			// Login to application with unverified email and mobile number
+			utillObj.LoginToApplication(Data.getProperty("VerifiedEmail"), Data.getProperty("VerifiedEmailPwd"));
+
+			// select city drop down
+			utillObj.wait(6);
+			driver.findElement(By.xpath(OR.getProperty("SelectCity"))).click();
+
+
+			// Select Sabya
+			utillObj.wait(2);
+			driver.findElement(By.xpath(OR.getProperty("Sabya"))).click();
 	
 
+			// Out of stock product search
+			utillObj.wait(6);
+			driver.findElement(By.xpath(OR.getProperty("SearchBox"))).sendKeys(Data.getProperty("OutOfStockProduct"));
+			
+			// Out of stock product search
+			utillObj.wait(3);
+			driver.findElement(By.xpath(OR.getProperty("OutOfStockProductLink"))).click();
+			utillObj.wait(10);
+			
+			
+			//CheckWishList
+			String AttValue=driver.findElement(By.xpath(OR.getProperty("WishList"))).getAttribute("class").trim();
+			if(AttValue.equals(OR.getProperty("SelectedWishListAttValue"))) {
+				driver.findElement(By.xpath(OR.getProperty("WishListClick"))).click();
+				utillObj.wait(2);
+				}
+			
+			//Click on wishList
+			driver.findElement(By.xpath(OR.getProperty("WishListClick"))).click();
+			
+			//Validate wishList
+			utillObj.wait(2);
+			String AttValue1=driver.findElement(By.xpath(OR.getProperty("WishList"))).getAttribute("class").trim();
+			if(AttValue1.equals(OR.getProperty("SelectedWishListAttValue"))) {
+				Assert.assertTrue(true, "As Expected, Product added in wishlist");
+			}else {
+				Assert.assertTrue(false, "Product is not added in  wishlist");
+			}
+			
+		} catch (NoSuchElementException nse) {
+			Assert.assertTrue(false, "NoSuchWebElement expection occured for the WebElment--" + nse.getMessage());
+		} catch (Exception e) {
+			Assert.assertTrue(false, "Exception Occured as --" + e.getMessage());
+		}
+	}
 
+
+	@Test(priority = 13)
+	public void validateNotifyButtons_StockAvailabilitySheet_TC06() {
+		try {
+
+			/**
+			 * This method will use to open Browser
+			 */
+			openBrowser();
+
+			/**
+			 * This method will use to open the application URL
+			 */
+			utillObj.openApplication();
+
+			// Login to application with unverified email and mobile number
+			utillObj.LoginToApplication(Data.getProperty("VerifiedEmail"), Data.getProperty("VerifiedEmailPwd"));
+
+			// select city drop down
+			utillObj.wait(6);
+			driver.findElement(By.xpath(OR.getProperty("SelectCity"))).click();
+
+
+			// Select Sabya
+			utillObj.wait(2);
+			driver.findElement(By.xpath(OR.getProperty("Sabya"))).click();
+	
+
+			// Out of stock product search
+			utillObj.wait(6);
+			driver.findElement(By.xpath(OR.getProperty("SearchBox"))).sendKeys(Data.getProperty("OutOfStockProduct"));
+			
+			// Out of stock product search
+			utillObj.wait(3);
+			driver.findElement(By.xpath(OR.getProperty("OutOfStockProductLink"))).click();
+			utillObj.wait(10);
+			
+			
+			//Check notify button	
+			utillObj.pageScrollDown();
+			Boolean flag=driver.findElement(By.xpath(OR.getProperty("NotifyButton"))).isDisplayed();
+			if(flag==true) {
+				Assert.assertTrue(true, "As Expected, Notify button is displayed");
+			}else {
+				Assert.assertTrue(false, "Notify button is  not displayed");
+			}
+			
+		} catch (NoSuchElementException nse) {
+			Assert.assertTrue(false, "NoSuchWebElement expection occured for the WebElment--" + nse.getMessage());
+		} catch (Exception e) {
+			Assert.assertTrue(false, "Exception Occured as --" + e.getMessage());
+		}
+	}	
+	
+
+	@Test(priority = 14)
+	public void validateUnableToAddOutOfStockProduct_StockAvailabilitySheet_TC07() {
+		try {
+
+			/**
+			 * This method will use to open Browser
+			 */
+			openBrowser();
+
+			/**
+			 * This method will use to open the application URL
+			 */
+			utillObj.openApplication();
+
+			// Login to application with unverified email and mobile number
+			utillObj.LoginToApplication(Data.getProperty("VerifiedEmail"), Data.getProperty("VerifiedEmailPwd"));
+
+			// select city drop down
+			utillObj.wait(6);
+			driver.findElement(By.xpath(OR.getProperty("SelectCity"))).click();
+
+
+			// Select Sabya
+			utillObj.wait(2);
+			driver.findElement(By.xpath(OR.getProperty("Sabya"))).click();
+	
+
+			// Out of stock product search
+			utillObj.wait(6);
+			driver.findElement(By.xpath(OR.getProperty("SearchBox"))).sendKeys(Data.getProperty("OutOfStockProduct"));
+			
+			// Out of stock product search
+			utillObj.wait(3);
+			driver.findElement(By.xpath(OR.getProperty("OutOfStockProductLink"))).click();
+			utillObj.wait(10);
+			
+			
+			//Check notify button	
+			utillObj.pageScrollDown();
+			Boolean flag=driver.findElement(By.xpath(OR.getProperty("AddToCartButton"))).isEnabled();
+			if(flag==false) {
+				Assert.assertTrue(true, "As Expected,'Add to cart Button' is displayed");
+			}else {
+				Assert.assertTrue(false, "'Add to cart Button' is not displayed");
+			}
+			
+			//Click on Add to cart button
+			driver.findElement(By.xpath(OR.getProperty("AddToCartButton"))).click();
+			
+			if(driver.getCurrentUrl().equals(Data.getProperty("OutOfStockProductURL"))) {
+				Assert.assertTrue(true, "As Expected,'Unable to add out of stock product");
+			}else {
+				Assert.assertTrue(false, "Aable to add out of stock product");
+			}
+			
+		} catch (NoSuchElementException nse) {
+			Assert.assertTrue(false, "NoSuchWebElement expection occured for the WebElment--" + nse.getMessage());
+		} catch (Exception e) {
+			Assert.assertTrue(false, "Exception Occured as --" + e.getMessage());
+		}
+	}	
+	
+	
 }
