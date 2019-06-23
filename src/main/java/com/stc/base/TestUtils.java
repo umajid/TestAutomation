@@ -16,6 +16,7 @@ import org.testng.asserts.SoftAssert;
 public class TestUtils extends TestBase{
 
 	public static WebDriverWait wait = new WebDriverWait(driver, 30);
+	public static TestUtils utils = new TestUtils();
 
 	// Launch application
 	public  static void openApplication(){
@@ -250,7 +251,8 @@ public class TestUtils extends TestBase{
 
 		}
 		catch(Exception e){
-			Assert.assertTrue(false, e.getMessage());
+			System.out.println("Modify Email "+e.getMessage());
+			Assert.assertTrue(false, "Modify Email "+e.getMessage());
 		}
 	}
 
@@ -271,7 +273,8 @@ public class TestUtils extends TestBase{
 
 		}
 		catch(Exception e){
-			Assert.assertTrue(false,  e.getMessage());
+            System.out.println("Verify Mobile Email State Error "+e.getMessage());
+			Assert.assertTrue(false,  "Verify Mobile Email State Error "+e.getMessage());
 		}		
 	}
 
@@ -290,7 +293,8 @@ public class TestUtils extends TestBase{
 
 		}
 		catch(Exception e){
-			Assert.assertTrue(false,  e.getMessage());
+			System.out.println("Select sawa vouchers" + e.getMessage());
+			Assert.assertTrue(false,  "Select sawa vouchers" + e.getMessage());
 		}		
 	}
 
@@ -311,7 +315,8 @@ public class TestUtils extends TestBase{
 
 		}
 		catch(Exception e){
-			Assert.assertTrue(false,  e.getMessage());
+			System.out.println("Add and navigate to checkout Error" +e.getMessage());
+			Assert.assertTrue(false,  "Add and navigate to checkout Error" +e.getMessage());
 		}		
 	}
 
@@ -325,11 +330,12 @@ public class TestUtils extends TestBase{
 			// Click on Checkout button
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(OR.getProperty("Delete_Item"))));
 			driver.findElement(By.xpath(OR.getProperty("Delete_Item"))).click();
-			Thread.sleep(5000);
+			Thread.sleep(8000);
 
 		}
 		catch(Exception e){
-			Assert.assertTrue(false,  e.getMessage());
+			System.out.println("Delete cart Error" +e.getMessage());
+			Assert.assertTrue(false,  "Delete cart Error" +e.getMessage());
 		}		
 	}
 
@@ -370,11 +376,12 @@ public class TestUtils extends TestBase{
 			driver.findElement(By.id(OR.getProperty("Email_Textbox"))).sendKeys(emailAddress);
 
 			// Enter Mobile Number
-			Thread.sleep(3000);	
+			utils.pageScrollDown();
+			Thread.sleep(1000);	
 			driver.findElement(By.id(OR.getProperty("Mobile_Textbox"))).sendKeys(Data.getProperty("MobileNumber"));
 
 			// Enter Password 
-			Thread.sleep(3000);			
+			Thread.sleep(1000);			
 			driver.findElement(By.xpath(OR.getProperty("Password_Textbox"))).sendKeys(Data.getProperty("FirstNameValue")+"@123");
 
 		}
@@ -388,7 +395,9 @@ public class TestUtils extends TestBase{
 		try{
 			// Clear Mobile Number and Renter again
 			Thread.sleep(1000);
+			utils.pageScrollDown();
 			driver.findElement(By.id(OR.getProperty("Mobile_Textbox"))).clear();
+			utils.pageScrollDown();
 			Thread.sleep(2000);
 			driver.findElement(By.id(OR.getProperty("Mobile_Textbox"))).sendKeys(mobile);
 
@@ -525,11 +534,12 @@ public class TestUtils extends TestBase{
 			String mobileNum = "5" + generateRandomNumber(8);
 
 			// Enter Random valid Mobile Number
-			Thread.sleep(5000);
+			utils.pageScrollDown();
+			Thread.sleep(1000);
 			driver.findElement(By.id(OR.getProperty("Mobile_Textbox"))).sendKeys(mobileNum);
 
 			// Enter Password 
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath(OR.getProperty("Password_Textbox"))).sendKeys(Data.getProperty("FirstNameValue")+"@123");
 
 
@@ -574,11 +584,12 @@ public class TestUtils extends TestBase{
 			String mobileNum = "5" + generateRandomNumber(7);
 
 			// Enter Random Invalid Mobile Number
-			Thread.sleep(3000);
+			utils.pageScrollDown();
+			Thread.sleep(1000);
 			driver.findElement(By.id(OR.getProperty("Mobile_Textbox"))).sendKeys(mobileNum);
 
 			// Enter Password 
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath(OR.getProperty("Password_Textbox"))).sendKeys(Data.getProperty("FirstNameValue")+"@123");
 
 
@@ -622,11 +633,12 @@ public class TestUtils extends TestBase{
 			String mobileNum = "5" + generateRandomNumber(8);
 
 			// Enter Random valid Mobile Number
-			Thread.sleep(3000);
+			utils.pageScrollDown();
+			Thread.sleep(1000);
 			driver.findElement(By.id(OR.getProperty("Mobile_Textbox"))).sendKeys(mobileNum);
 
 			// Enter Password 
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath(OR.getProperty("Password_Textbox"))).sendKeys(Data.getProperty("FirstNameValue")+"@123");
 
 
@@ -670,11 +682,12 @@ public class TestUtils extends TestBase{
 			String mobileNum = "5" + generateRandomNumber(8);
 
 			// Enter Random valid Mobile Number
-			Thread.sleep(3000);
+			utils.pageScrollDown();
+			Thread.sleep(1000);
 			driver.findElement(By.id(OR.getProperty("Mobile_Textbox"))).sendKeys(mobileNum);
 
 			// Enter Password 
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 			driver.findElement(By.xpath(OR.getProperty("Password_Textbox"))).sendKeys(Data.getProperty("FirstNameValue"));
 
 
@@ -726,12 +739,14 @@ public class TestUtils extends TestBase{
 			// Click on the logged in user button
 			driver.findElement(By.xpath(OR.getProperty("LoggedIn_User"))).click();
 			// Click on sign out button to log out from the application
+			Thread.sleep(5000);
 			driver.findElement(By.xpath(OR.getProperty("SignOut_button"))).click();
 			Thread.sleep(5000);
 
 		}
 		catch(Exception e){
-			Assert.assertTrue(false,  e.getMessage());
+			System.out.println("Sign out user" +e.getMessage());
+			Assert.assertTrue(false,  "Sign out user" +e.getMessage());
 		}
 	}
 
@@ -817,6 +832,8 @@ public class TestUtils extends TestBase{
 	
 	
 	
+	
+	
 	// Umendra
 	/**
 	 * This method will use to login 
@@ -874,6 +891,8 @@ public class TestUtils extends TestBase{
 		JavascriptExecutor js = (JavascriptExecutor) driver;  
 		js.executeScript("window.scrollBy(0,200)");		
 	}
+	
+	
 	
 
 

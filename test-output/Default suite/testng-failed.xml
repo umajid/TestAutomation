@@ -6,6 +6,7 @@
       <class name="com.stc.testcases.Sprint1Cases">
         <methods>
           <include name="duplicateEmailError"/>
+          <include name="notifyMeTwoCities"/>
           <include name="doSetup"/>
           <include name="tearDown"/>
         </methods>
