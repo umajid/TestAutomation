@@ -28,7 +28,7 @@ public class Sprint1Cases extends TestBase
 	}
 
 	// Verify Account Creation Terms & Condition checkbox unselected by default
-	@Test (enabled = false ,priority=1)
+	@Test (enabled = true,priority=1)
 	public void verifyTermsAndConditionDefaultState(){
 		try{			
 			// Starting new instance of browser
@@ -46,7 +46,7 @@ public class Sprint1Cases extends TestBase
 	}
 
 	// Verify Account Creation Offers and Alerts checkbox unselected by default
-	@Test (enabled = false, priority=2)
+	@Test (enabled = true, priority=2)
 	public void verifyOffersAndAlertsDefaultState(){
 		try{			
 			// Starting new instance of browser
@@ -65,7 +65,7 @@ public class Sprint1Cases extends TestBase
 
 
 	// Verify Subscribe to Offers & Alerts can be deselected.
-	@Test (enabled = false, priority=3)
+	@Test (enabled = true, priority=3)
 	public void OffersAndAlertsDeselect(){
 		try{			
 			// Starting new instance of browser
@@ -81,6 +81,7 @@ public class Sprint1Cases extends TestBase
 			Assert.assertTrue(false, "TC failing " + e.getMessage());
 		}
 	}
+        // Warning :- Run this TC ony after two new unregistered mobile numbers Mobile and Mobile2 are updated in Data.properties
 	// Verify Account Creation based on different permutation and combinations
 	@Test(enabled = false, priority=4)
 	public void verifyAccountCreationViaDiffFields(){
@@ -117,7 +118,7 @@ public class Sprint1Cases extends TestBase
 	}
 
 	// Verify User get an Error message if he tries to create an Account with already registered Mobile Number
-	@Test(enabled = false, priority=5)
+	@Test(enabled = true, priority=5)
 	public void duplicateMobileNumberError(){
 
 		try{
@@ -140,7 +141,7 @@ public class Sprint1Cases extends TestBase
 	}
 
 	// Verify User get an Error message if he tries to create an Account with already registered Email Address
-	@Test(enabled = false, priority=6)
+	@Test(enabled = true, priority=6)
 	public void duplicateEmailError(){
 
 		try{
@@ -160,7 +161,7 @@ public class Sprint1Cases extends TestBase
 	}
 
 	// Verify User get an Error message if Invalid Mobile Number is used while creating an Account
-	@Test(enabled = false, priority=7)
+	@Test(enabled = true, priority=7)
 	public void InvalidMobileNumErrorMsg(){
 
 		try{
@@ -180,7 +181,7 @@ public class Sprint1Cases extends TestBase
 	}
 
 	// Verify User get an Error message if Invalid Email is used while creating an Account
-	@Test(enabled = false, priority=8)
+	@Test(enabled = true, priority=8)
 	public void InvalidEmailErrorMsg(){
 
 		try{
@@ -200,7 +201,7 @@ public class Sprint1Cases extends TestBase
 	}
 
 	// Verify User get an Error message if small length password is used while creating an Account
-	@Test(enabled = false, priority=9)
+	@Test(enabled = true, priority=9)
 	public void smallPasswordErrorMsg(){
 
 		try{
