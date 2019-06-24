@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="12" passed="12">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="287415" started-at="2019-06-23T14:56:03Z" finished-at="2019-06-23T15:00:50Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="287415" started-at="2019-06-23T14:56:03Z" finished-at="2019-06-23T15:00:50Z">
+      <class name="com.stc.testcases.Sprint1Cases">
+        <test-method status="PASS" signature="doSetup()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="doSetup" is-config="true" duration-ms="15" started-at="2019-06-23T20:26:03Z" finished-at="2019-06-23T20:26:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doSetup -->
+        <test-method status="PASS" signature="verifyTermsAndConditionDefaultState()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="verifyTermsAndConditionDefaultState" duration-ms="17796" started-at="2019-06-23T20:26:03Z" finished-at="2019-06-23T20:26:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTermsAndConditionDefaultState -->
+        <test-method status="PASS" signature="verifyOffersAndAlertsDefaultState()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="verifyOffersAndAlertsDefaultState" duration-ms="2649" started-at="2019-06-23T20:26:21Z" finished-at="2019-06-23T20:26:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyOffersAndAlertsDefaultState -->
+        <test-method status="PASS" signature="OffersAndAlertsDeselect()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="OffersAndAlertsDeselect" duration-ms="2447" started-at="2019-06-23T20:26:23Z" finished-at="2019-06-23T20:26:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OffersAndAlertsDeselect -->
+        <test-method status="PASS" signature="duplicateMobileNumberError()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="duplicateMobileNumberError" duration-ms="7131" started-at="2019-06-23T20:26:26Z" finished-at="2019-06-23T20:26:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- duplicateMobileNumberError -->
+        <test-method status="PASS" signature="duplicateEmailError()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="duplicateEmailError" duration-ms="6311" started-at="2019-06-23T20:26:33Z" finished-at="2019-06-23T20:26:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- duplicateEmailError -->
+        <test-method status="PASS" signature="InvalidMobileNumErrorMsg()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="InvalidMobileNumErrorMsg" duration-ms="5768" started-at="2019-06-23T20:26:39Z" finished-at="2019-06-23T20:26:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InvalidMobileNumErrorMsg -->
+        <test-method status="PASS" signature="InvalidEmailErrorMsg()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="InvalidEmailErrorMsg" duration-ms="5717" started-at="2019-06-23T20:26:45Z" finished-at="2019-06-23T20:26:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InvalidEmailErrorMsg -->
+        <test-method status="PASS" signature="smallPasswordErrorMsg()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="smallPasswordErrorMsg" duration-ms="5939" started-at="2019-06-23T20:26:51Z" finished-at="2019-06-23T20:26:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- smallPasswordErrorMsg -->
+        <test-method status="PASS" signature="checkoutWithoutEmailMobileVerification()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="checkoutWithoutEmailMobileVerification" duration-ms="75639" started-at="2019-06-23T20:26:57Z" finished-at="2019-06-23T20:28:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkoutWithoutEmailMobileVerification -->
+        <test-method status="PASS" signature="notifyMeRegisteredUser()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="notifyMeRegisteredUser" duration-ms="54758" started-at="2019-06-23T20:28:12Z" finished-at="2019-06-23T20:29:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- notifyMeRegisteredUser -->
+        <test-method status="PASS" signature="notifyMeGuestUser()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="notifyMeGuestUser" duration-ms="27437" started-at="2019-06-23T20:29:07Z" finished-at="2019-06-23T20:29:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- notifyMeGuestUser -->
+        <test-method status="PASS" signature="notifyMeTwoCities()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="notifyMeTwoCities" duration-ms="75815" started-at="2019-06-23T20:29:34Z" finished-at="2019-06-23T20:30:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- notifyMeTwoCities -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.stc.testcases.Sprint1Cases@1035e27]" name="tearDown" is-config="true" duration-ms="0" started-at="2019-06-23T20:30:51Z" finished-at="2019-06-23T20:30:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.stc.testcases.Sprint1Cases -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
